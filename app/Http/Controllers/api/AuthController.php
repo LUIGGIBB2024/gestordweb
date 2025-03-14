@@ -20,12 +20,12 @@ class AuthController extends Controller
 
       $usuario = User::where('email','=',$request->email)->first();
 
-    //   return response()->json(
-    //     [
-    //       'status'      => '200 OK',
-    //       'msg'         => 'Voy Aquí',  
-    //       'request'     => $request->all(),    
-    //     ],Response::HTTP_ACCEPTED);
+       return response()->json(
+         [
+           'status'      => '200 OK',
+           'msg'         => 'Voy Aquí',  
+           'request'     => $usuario,    
+         ],Response::HTTP_ACCEPTED);
 
 
         $request->validate([
