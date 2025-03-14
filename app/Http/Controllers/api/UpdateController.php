@@ -4,8 +4,10 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\EntradaDeEquipo;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB as FacadesDB;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -66,12 +68,13 @@ class UpdateController extends Controller
         if (isset($datos_json["entradas"]))
         {
             $entradas = $datos_json["entradas"];
-
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             foreach ($entradas as $dato)
             {
               $consecutivo  =   $dato['consecutivo'];
               $serial       =   $dato['serial'];
               $fecha        =   $dato['fechadereporte'];
+              FacadesDB::beginTransaction();  
               $reg_entradas =   EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
               [
                 'consecutivo'           => $dato['consecutivo'],                
@@ -96,7 +99,9 @@ class UpdateController extends Controller
                 'usuario_created'       =>Auth::user()->codigo,
                 'usuario_updated'       =>Auth::user()->codigo
               ]);
+              DB::commit(); 
             }
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');   
         }
 
         //////////////////////////////////////////////////////////////
