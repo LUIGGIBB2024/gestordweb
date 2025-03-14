@@ -13,7 +13,6 @@ class AuthController extends Controller
     public function login(Request $request):JsonResponse
     {
       //$correo = $request->email ."--" . $request->password;
-
       $usuario = User::where('email','=',$request->email)->first();
 
 
@@ -25,8 +24,6 @@ class AuthController extends Controller
 
         if (isset($usuario->id))
          {
-
-
             if (Hash::check($request->password,$usuario->password))
                {
                 // Creamos TOKEN
