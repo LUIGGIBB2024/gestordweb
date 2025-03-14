@@ -107,7 +107,7 @@ class UpdateController extends Controller
               [
                   'status' => '200',
                   'msg' => 'Actualización Exitosa',
-                  'data' => $dato["serial"],
+                  'data' => "Entradas / Clientes OK",
               ],Response::HTTP_ACCEPTED); 
 
               $consecutivo  =   $dato->consecutivo;
