@@ -32,14 +32,17 @@ class AuthController extends Controller
        
             if (Hash::check($request->password,$usuario->password))
                {
+                
+
+                $token = $usuario->createToken("auth_token")->plainTextToken;
+
                 return response()->json(
                     [
                       'status'      => '200 OK',
-                      'msg'         => 'Voy Aquí dentro de usuario CHECK',  
+                      'msg'         => 'Voy Aquí dentro de usuario token',  
                       'request'     => $usuario,    
+                      'token'       => $token,
                     ],Response::HTTP_ACCEPTED);
-
-                $token = $usuario->createToken("auth_token")->plainTextToken;
                 return response()->json(
                  [
                      'status' => '1',
