@@ -103,12 +103,12 @@ class UpdateController extends Controller
             foreach ($entradaseq as $dato)
             {           
             
-              return response()->json(
-              [
-                  'status' => '200',
-                  'msg' => 'Actualización Exitosa',
-                  'data' => "Entradas / Clientes OK",
-              ],Response::HTTP_ACCEPTED); 
+              // return response()->json(
+              // [
+              //     'status' => '200',
+              //     'msg' => 'Actualización Exitosa',
+              //     'data' => "Entradas / Clientes OK",
+              // ],Response::HTTP_ACCEPTED); 
 
               $consecutivo  =   $dato->consecutivo;
               $serial       =   $dato->serial;
