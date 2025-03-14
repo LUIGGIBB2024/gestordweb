@@ -98,12 +98,12 @@ class UpdateController extends Controller
                 'fechadereporte'        => $dato['fechadereporte'],
                 'descripcionequipo'     => $dato['descripcionequipo'],
                 'observaciones'         => $dato['observaciones'],
+                'reporte'               => $dato['reporte'],
                 'anticipo'              => $dato['anticipo'],
                 'nit'                   => $dato['nit'],
                 'nombre'                => $dato['nombre'],
                 'direccion'             => $dato['direccion'],
                 'telefono'              => $dato['telefono'],              
-                'estado'                => $dato['estado'],
                 'idcliente'             => $dato['idcliente'],
                 'idtecnico'             => $dato['idtecnico'],
                 'rutafirma'             => "",
@@ -120,6 +120,8 @@ class UpdateController extends Controller
             }
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');   
         }
+
+  
 
         //////////////////////////////////////////////////////////////
         /////           Procesar  Detalle de Entradas
