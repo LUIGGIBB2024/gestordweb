@@ -18,12 +18,14 @@ class AuthController extends Controller
     {
       //$correo = $request->email ."--" . $request->password;
 
-      return response()->json(
-        [
-          'status'      => '200 OK',
-          'msg'         => 'Voy Aquí',  
-          'request'     => $request->all(),    
-        ],Response::HTTP_ACCEPTED);
+      $usuario = User::where('email','=',$request->email)->first();
+
+    //   return response()->json(
+    //     [
+    //       'status'      => '200 OK',
+    //       'msg'         => 'Voy Aquí',  
+    //       'request'     => $request->all(),    
+    //     ],Response::HTTP_ACCEPTED);
 
 
         $request->validate([
