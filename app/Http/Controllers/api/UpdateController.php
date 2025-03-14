@@ -16,7 +16,16 @@ class UpdateController extends Controller
     public function UpdateClientesEntradas(Request $request):JsonResponse
     {
 
-        // $datos_json = json_decode($request->getContent(), true);
+        $datos_json = json_decode($request->getContent(), true); 
+        
+        return response()->json(
+          [
+              'status' => '200',
+              'msg' => 'Actualización Exitosa',
+              'data' =>  $datos_json,
+          ],Response::HTTP_ACCEPTED);     
+
+
 
         // if (isset($datos_json["clientes"]))
         // {
