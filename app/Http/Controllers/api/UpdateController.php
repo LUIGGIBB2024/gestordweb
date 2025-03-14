@@ -22,7 +22,7 @@ class UpdateController extends Controller
           [
               'status' => '200',
               'msg' => 'Actualización Exitosa',
-              'data' =>  $datos_json,
+              'data' =>  $request->getContent(),
           ],Response::HTTP_ACCEPTED);     
 
 
@@ -150,7 +150,7 @@ class UpdateController extends Controller
             [
                 'status' => '200',
                 'msg' => 'Actualización Exitosa',
-           '    data' =>  "Entradas / Clientes OK",
+                'data' =>  "Entradas / Clientes OK",
             ],Response::HTTP_ACCEPTED);       
 
     }
