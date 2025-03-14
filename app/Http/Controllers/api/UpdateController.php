@@ -16,8 +16,8 @@ class UpdateController extends Controller
     public function UpdateClientesEntradas(Request $request):JsonResponse
     {
 
-        $datos_json = json_decode($request->getContent(), true); 
-        
+        //$datos_json = json_decode($request->getContent(), true); 
+        $datos_json = json_decode($request->entradas);     
         // return response()->json(
         //   [
         //       'status' => '200',
@@ -74,7 +74,7 @@ class UpdateController extends Controller
         /////           Procesar Entradas de Equipos
         //////////////////////////////////////////////////////////////
 
-        if (isset($datos_json["entradas"]))
+        if (isset($request->entradas))
         {
           // return response()->json(
           //   [
@@ -83,7 +83,7 @@ class UpdateController extends Controller
           //       'data' => $datos_json,
           //   ],Response::HTTP_ACCEPTED); 
 
-            $entradaseq = $datos_json["entradas"];
+            $entradaseq = $request->entradas;
 
             // return response()->json(
             //   [
@@ -110,29 +110,29 @@ class UpdateController extends Controller
                   'data' => $dato["serial"],
               ],Response::HTTP_ACCEPTED); 
 
-              $consecutivo  =   $dato['consecutivo'];
-              $serial       =   $dato['serial'];
-              $fecha        =   $dato['fechadereporte'];
+              $consecutivo  =   $dato->consecutivo;
+              $serial       =   $dato->serial;
+              $fecha        =   $dato->fechadereporte;
               FacadesDB::beginTransaction();  
               $reg_entradas =   EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
               [
-                'consecutivo'           => $dato['consecutivo'],                
+                'consecutivo'           => $dato->consecutivo,                
                 'tipodedocumento'       => "ENTRADA",
-                'fechadereporte'        => $dato['fechadereporte'],
-                'descripcionequipo'     => $dato['descripcionequipo'],
-                'observaciones'         => $dato['observaciones'],
-                'reporte'               => $dato['reporte'],
-                'anticipo'              => $dato['anticipo'],
-                'nit'                   => $dato['nit'],
-                'nombre'                => $dato['nombre'],
-                'direccion'             => $dato['direccion'],
-                'telefono'              => $dato['telefono'],              
-                'idcliente'             => $dato['idcliente'],
-                'idtecnico'             => $dato['idtecnico'],
+                'fechadereporte'        => $dato->fechadereporte,
+                'descripcionequipo'     => $dato->descripcionequipo,
+                'observaciones'         => $dato->observaciones,
+                'reporte'               => $dato->reporte,
+                'anticipo'              => $dato->anticipo,
+                'nit'                   => $dato->nit,
+                'nombre'                => $dato->nombre,
+                'direccion'             => $dato->direccion,
+                'telefono'              => $dato->telefono,              
+                'idcliente'             => $dato->idcliente,
+                'idtecnico'             => $dato->idtecnico,
                 'rutafirma'             => "",
-                'serial'                => $dato['serial'],
-                'modelo'                => $dato['modelo'],
-                'estado'                => $dato['estado'],
+                'serial'                => $dato->serial,
+                'modelo'                => $dato->modelo,
+                'estado'                => $dato->estado,
                 'estado01'              => 0,
                 'estado02'              => 0,
                 'estado03'              => 1,
