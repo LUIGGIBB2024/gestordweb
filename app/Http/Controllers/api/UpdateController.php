@@ -83,7 +83,7 @@ class UpdateController extends Controller
           //       'data' => $datos_json,
           //   ],Response::HTTP_ACCEPTED); 
 
-            $entradas = $datos_json["entradas"];
+            $entradaseq = $datos_json["entradas"];
 
             // return response()->json(
             //   [
@@ -100,7 +100,7 @@ class UpdateController extends Controller
             //       'data' => $entradas,
             //   ],Response::HTTP_ACCEPTED); 
 
-            foreach ($entradas as $dato)
+            foreach ($entradaseq as $dato)
             {           
             
               return response()->json(
