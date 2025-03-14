@@ -65,7 +65,6 @@ class UpdateController extends Controller
 
         if (isset($datos_json["entradas"]))
         {
-
             $entradas = $datos_json["entradas"];
 
             foreach ($entradas as $dato)
