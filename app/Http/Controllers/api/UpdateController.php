@@ -76,17 +76,18 @@ class UpdateController extends Controller
 
         if (isset($datos_json["entradas"]))
         {
-            return response()->json(
-          [
-              'status' => '200',
-              'msg' => 'Actualización Exitosa',
-              'data' => "Estoy en la Entradas",
-          ],Response::HTTP_ACCEPTED); 
 
             $entradas = $datos_json["entradas"];
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             foreach ($entradas as $dato)
             {
+              
+            return response()->json(
+              [
+                  'status' => '200',
+                  'msg' => 'Actualización Exitosa',
+                  'data' => "Estoy en la Entradas - IN",
+              ],Response::HTTP_ACCEPTED); 
               $consecutivo  =   $dato['consecutivo'];
               $serial       =   $dato['serial'];
               $fecha        =   $dato['fechadereporte'];
