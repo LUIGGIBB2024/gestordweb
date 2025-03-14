@@ -97,7 +97,7 @@ class UpdateController extends Controller
               [
                   'status' => '200',
                   'msg' => 'Actualización Exitosa',
-                  'data' => "Antes de Entradas",
+                  'data' => $entradas,
               ],Response::HTTP_ACCEPTED); 
 
             foreach ($entradas as $dato)
