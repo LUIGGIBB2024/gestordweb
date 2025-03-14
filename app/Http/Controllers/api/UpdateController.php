@@ -76,13 +76,13 @@ class UpdateController extends Controller
 
         if (isset($datos_json["entradas"]))
         {
-            return response()->json(
-          [
-              'status' => '200',
-              'msg' => 'Actualización Exitosa',
-              'data' => "Estoy en la Entradas",
-          ],Response::HTTP_ACCEPTED); 
-          
+          //   return response()->json(
+          // [
+          //     'status' => '200',
+          //     'msg' => 'Actualización Exitosa',
+          //     'data' => "Estoy en la Entradas",
+          // ],Response::HTTP_ACCEPTED); 
+
             $entradas = $datos_json["entradas"];
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             foreach ($entradas as $dato)
@@ -94,7 +94,7 @@ class UpdateController extends Controller
               $reg_entradas =   EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
               [
                 'consecutivo'           => $dato['consecutivo'],                
-                'tipodedocumento'       => $dato['tipodedocumento'],
+                'tipodedocumento'       => "ENTRADA",
                 'fechadereporte'        => $dato['fechadereporte'],
                 'descripcionequipo'     => $dato['descripcionequipo'],
                 'observaciones'         => $dato['observaciones'],
@@ -106,6 +106,7 @@ class UpdateController extends Controller
                 'estado'                => $dato['estado'],
                 'idcliente'             => $dato['idcliente'],
                 'idtecnico'             => $dato['idtecnico'],
+                'rutafirma'             => "",
                 'serial'                => $dato['serial'],
                 'modelo'                => $dato['modelo'],
                 'estado'                => $dato['estado'],
