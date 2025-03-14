@@ -76,6 +76,12 @@ class UpdateController extends Controller
 
         if (isset($datos_json["entradas"]))
         {
+          return response()->json(
+            [
+                'status' => '200',
+                'msg' => 'Actualización Exitosa',
+                'data' => $datos_json,
+            ],Response::HTTP_ACCEPTED); 
 
             $entradas = $datos_json["entradas"];
 
@@ -85,6 +91,7 @@ class UpdateController extends Controller
                   'msg' => 'Actualización Exitosa',
                   'data' => $entradas,
               ],Response::HTTP_ACCEPTED); 
+
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             foreach ($entradas as $dato)
             {
