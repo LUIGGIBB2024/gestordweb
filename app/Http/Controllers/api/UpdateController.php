@@ -76,14 +76,14 @@ class UpdateController extends Controller
 
         if (isset($request->entradas))
         {
-          return response()->json(
-            [
-                'status' => '200',
-                'msg' => 'Actualización Exitosa Entrada',
-                'data' => $datos_json,
-            ],Response::HTTP_ACCEPTED); 
+          // return response()->json(
+          //   [
+          //       'status' => '200',
+          //       'msg' => 'Actualización Exitosa Entrada',
+          //       'data' => $datos_json,
+          //   ],Response::HTTP_ACCEPTED); 
 
-            $entradaseq = $request->entradas;
+            $entradaseq = $datos_json;
 
             // return response()->json(
             //   [
