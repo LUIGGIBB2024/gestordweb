@@ -18,15 +18,7 @@ class AuthController extends Controller
     {
       //$correo = $request->email ."--" . $request->password;
 
-      $usuario = User::where('email','=',$request->email)->first();
-
-       return response()->json(
-         [
-           'status'      => '200 OK',
-           'msg'         => 'Voy Aquí',  
-           'request'     => $usuario,    
-         ],Response::HTTP_ACCEPTED);
-
+        $usuario = User::where('email','=',$request->email)->first();      
 
         $request->validate([
             'email' =>'required',
@@ -36,6 +28,13 @@ class AuthController extends Controller
 
         if (isset($usuario->id))
          {
+            return response()->json(
+                [
+                  'status'      => '200 OK',
+                  'msg'         => 'Voy Aquí dentro de usuario',  
+                  'request'     => $usuario,    
+                ],Response::HTTP_ACCEPTED);
+       
             if (Hash::check($request->password,$usuario->password))
                {
                 // Creamos TOKEN
