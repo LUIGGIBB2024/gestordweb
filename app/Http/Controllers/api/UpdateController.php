@@ -18,7 +18,6 @@ class UpdateController extends Controller
 
         //$datos_json = json_decode($request->getContent(), true); 
          
-
         $datos_json = json_decode($request->entradas);     
         // return response()->json(
         //   [
