@@ -17,8 +17,15 @@ class GetEntradasController extends Controller
         $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)
                     ->where('fechadereporte','<=',$hasta)                                  
                      ->get();   
-        
-        //$consulta = \App\Models\EntradaDeEquipo::all();
+        if $consulta == null)
+            {
+                return response()->json(
+                    [
+                        'status' => '404',
+                        'msg'  => 'Imposible la Consulta',
+                        'data' =>  "Entrada de Equipos no encontrada",
+                    ],404);
+            }
         return response()->json(
             [
                 'status' => '200',
