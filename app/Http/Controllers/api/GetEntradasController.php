@@ -29,7 +29,7 @@ class GetEntradasController extends Controller
         //                             ->where('fechadereporte','<=',$hasta)                                  
         //                             ->get();   
         
-        $consulta = User::get(); 
+        $consulta = Entradadeequipo::get(); 
           
         
         return response()->json(
