@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Entradadeequipo extends Model
 {
     use HasFactory;
+    protected $table =  'entradadeequipos';
 
     protected $fillable = [
         'tipodedocumento',
