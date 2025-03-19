@@ -7,6 +7,7 @@ use App\Models\Entradadeequipo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Http\Controllers\api\Exception;
 
 class GetEntradasController extends Controller
 {
