@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\GetEntradasController;
 use App\Http\Controllers\api\UpdateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,6 @@ Route::group(['middleware'=>['auth:sanctum']],function()
 
     Route::post('update-clientes-entradas', [UpdateController::class,'UpdateClientesEntradas']);
     Route::post('update-equipos', [UpdateController::class,'UpdateEquipos']);
+
+    Route::get('get-entradas', [GetEntradasController::class,'GetEntradas']);
 });
