@@ -30,14 +30,7 @@ class GetEntradasController extends Controller
         //                             ->get();   
         
         $consulta = EntradaDeEquipo::all();
-          
-        
-        return response()->json(
-            [
-                'status' => '200 OK',
-                'msg' => 'Actualización Exitosa',
-                'data' =>  $hasta . " - " . $desde,
-            ],Response::HTTP_ACCEPTED);
+  
         
         return response()->json(
             [
