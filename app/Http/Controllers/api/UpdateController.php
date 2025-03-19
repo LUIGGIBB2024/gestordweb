@@ -102,8 +102,7 @@ class UpdateController extends Controller
             //   ],Response::HTTP_ACCEPTED); 
 
             foreach ($entradaseq as $dato)
-            {           
-                         
+            {     
 
               $consecutivo  =   $dato->consecutivo;
               $serial       =   $dato->serial;
