@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api;
 
 
-namespace App\Models;
+//namespace App\Models;
 use App\Http\Controllers\Controller;
 use App\Models\Entradadeequipo;
 use Illuminate\Http\Request;
@@ -17,10 +17,12 @@ class GetEntradasController extends Controller
         $desde      = $request->desdefecha;
         $hasta      = $request->hastafecha;
 
-        //$consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)  
-        $consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
-                    ->where('fechadereporte','<=',$hasta)                                  
-                     ->get();   
+        $consulta = \App\Models\EntradaDeEquipo::all(); 
+
+        // $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)  
+        // //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
+        //             ->where('fechadereporte','<=',$hasta)                                  
+        //              ->get();   
 
         if  (!isset($consulta))
             {
