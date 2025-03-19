@@ -13,8 +13,8 @@ class GetEntradasController extends Controller
     public function getEntradas(Request $request)
     {
         $entradas   = $request->entradas;
-        $desde      = $request->desde;
-        $hasta      = $request->hasta;
+        $desde      = $request->desdefecha;
+        $hasta      = $request->hastafecha;
 
         $consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
                                     ->where('fechadereporte','<=',$hasta)                                  
