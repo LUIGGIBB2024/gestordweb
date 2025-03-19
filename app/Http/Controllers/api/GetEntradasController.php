@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class GetEntradasController extends Controller
 {
-    public function getEntradas(Request $request)
+    public function getEntradas(Request $request):JsonResponse
     {
         //$entradas   = $request->entradas;
         $desde      = $request->desdefecha;
