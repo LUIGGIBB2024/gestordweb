@@ -7,8 +7,8 @@ use App\Models\Entradadeequipo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\Http\Controllers\api\Exception;
-
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 class GetEntradasController extends Controller
 {
     public function getEntradas(Request $request):JsonResponse
@@ -30,7 +30,7 @@ class GetEntradasController extends Controller
         try
         {
            $consulta = Entradadeequipo::All(); 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return response()->json(
                 [
                     'status' => '404',
