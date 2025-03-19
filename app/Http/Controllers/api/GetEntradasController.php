@@ -17,7 +17,7 @@ class GetEntradasController extends Controller
         $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)
                     ->where('fechadereporte','<=',$hasta)                                  
                      ->get();   
-        if  ($consulta == null)
+        if  (is_null($consulta))
             {
                 return response()->json(
                     [
