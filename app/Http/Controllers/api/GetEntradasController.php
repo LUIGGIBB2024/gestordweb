@@ -29,12 +29,12 @@ class GetEntradasController extends Controller
         try
         {
            $consulta = Entradadeequipo::All(); 
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json(
                 [
                     'status' => '404',
                     'msg' => 'Error en la Consulta',
-                    'data' =>  $th,
+                    'data' =>  $e,
                 ],Response::HTTP_NOT_FOUND);
         }   
         
