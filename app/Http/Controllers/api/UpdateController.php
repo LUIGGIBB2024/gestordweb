@@ -114,7 +114,7 @@ class UpdateController extends Controller
               $serial       =   $dato->serial;
               $fecha        =   $dato->fechadereporte;
               FacadesDB::beginTransaction();  
-              $reg_entradas =   EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
+              $reg_entradas =   \App\Models\EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
               [
                 'consecutivo'           => $dato->consecutivo,                
                 'tipodedocumento'       => "ENTRADA",
