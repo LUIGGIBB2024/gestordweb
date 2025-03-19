@@ -8,11 +8,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Exception;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class GetEntradasController extends Controller
 {
-    public function getEntradas(Request $request):JsonResponse
+    public function GetEntradas(Request $request):JsonResponse
     {
         //$entradas   = $request->entradas;
         $desde      = $request->desdefecha;
