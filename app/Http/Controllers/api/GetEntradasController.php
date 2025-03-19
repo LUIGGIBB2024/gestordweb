@@ -12,13 +12,7 @@ class GetEntradasController extends Controller
 {
     public function getEntradas(Request $request)
     {
-        return response()->json(
-            [
-                'status' => '200',
-                'msg' => 'Actualización Exitosa',
-            ],Response::HTTP_ACCEPTED);
-
-        $entradas   = $request->entradas;
+        //$entradas   = $request->entradas;
         $desde      = $request->desdefecha;
         $hasta      = $request->hastafecha;
 
