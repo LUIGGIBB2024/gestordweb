@@ -27,17 +27,9 @@ class GetEntradasController extends Controller
         // $consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
         //                             ->where('fechadereporte','<=',$hasta)                                  
         //                             ->get();   
-        try
-        {
-           $consulta = Entradadeequipo::All(); 
-        } catch (Exception $e) {
-            return response()->json(
-                [
-                    'status' => '404',
-                    'msg' => 'Error en la Consulta',
-                    'data' =>  $e,
-                ],Response::HTTP_NOT_FOUND);
-        }   
+        
+        $consulta = Entradadeequipo::All(); 
+          
         
         return response()->json(
             [
