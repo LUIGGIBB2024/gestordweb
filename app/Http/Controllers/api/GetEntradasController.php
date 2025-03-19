@@ -23,11 +23,11 @@ class GetEntradasController extends Controller
         //         'data' =>  $hasta . " - " . $desde,
         //     ],Response::HTTP_ACCEPTED);
 
-        // $consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
-        //                             ->where('fechadereporte','<=',$hasta)                                  
-        //                             ->get();   
+        $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)
+                    ->where('fechadereporte','<=',$hasta)                                  
+                     ->get();   
         
-        $consulta = \App\Models\EntradaDeEquipo::all();
+        //$consulta = \App\Models\EntradaDeEquipo::all();
         return response()->json(
             [
                 'status' => '200',
