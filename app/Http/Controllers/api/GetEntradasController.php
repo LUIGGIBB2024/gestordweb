@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
+
 namespace App\Models;
+use App\Http\Controllers\Controller;
 use App\Models\Entradadeequipo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
