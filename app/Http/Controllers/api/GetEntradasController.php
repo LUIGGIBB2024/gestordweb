@@ -27,7 +27,15 @@ class GetEntradasController extends Controller
         //                             ->where('fechadereporte','<=',$hasta)                                  
         //                             ->get();   
 
-        $consulta = Entradadeequipo::All();                            
+        $consulta = Entradadeequipo::All();    
+        
+        return response()->json(
+            [
+                'status' => '200 OK',
+                'msg' => 'Actualización Exitosa',
+                'data' =>  $hasta . " - " . $desde,
+            ],Response::HTTP_ACCEPTED);
+        
         return response()->json(
             [
                 'status' => '200',
