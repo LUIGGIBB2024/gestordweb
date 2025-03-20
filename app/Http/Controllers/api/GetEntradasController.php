@@ -22,8 +22,8 @@ class GetEntradasController extends Controller
              [
                  'status' => '200 ENT',
                  'msg' => 'Actualización Exitosa',
-                 //'data' =>  $desde . "-" . $hasta,
-                 'data' =>$datos_json,
+                 'data' =>  $desde . "-" . $hasta,
+                 //'data' =>$datos_json,
              ],Response::HTTP_ACCEPTED);
 
         $consulta = EntradaDeEquipo::all(); 
