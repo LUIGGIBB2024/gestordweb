@@ -15,8 +15,8 @@ class GetEntradasController extends Controller
     {
 
         $datos_json = $request;
-        $desde      = $datos_json->desdefecha;
-        $hasta      = $datos_json->hastafecha;
+        $desde      = $request->desdefecha;
+        $hasta      = $request->hastafecha;
 
         return response()->json(
              [
