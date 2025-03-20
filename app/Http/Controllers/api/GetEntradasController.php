@@ -15,14 +15,15 @@ class GetEntradasController extends Controller
     {
 
         $datos_json = json_decode($request);
-        $desde      = $datos_json->desdefecha;
-        $hasta      = $datos_json->hastafecha;
+        // $desde      = $datos_json->desdefecha;
+        // $hasta      = $datos_json->hastafecha;
 
         return response()->json(
              [
                  'status' => '200 ENT',
                  'msg' => 'Actualización Exitosa',
-                 'data' =>  $desde . "-" . $hasta,
+                 //'data' =>  $desde . "-" . $hasta,
+                 'data' =>$datos_json,
              ],Response::HTTP_ACCEPTED);
 
         $consulta = EntradaDeEquipo::all(); 
