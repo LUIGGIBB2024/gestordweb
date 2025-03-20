@@ -13,15 +13,17 @@ class GetEntradasController extends Controller
 {
     public function GetEntradas(Request $request):JsonResponse
     {
-        $desde      = $request->desdefecha;
-        $hasta      = $request->hastafecha;
 
-        // return response()->json(
-        //     [
-        //         'status' => '200 ENT',
-        //         'msg' => 'Actualización Exitosa',
-        //         //'data' =>  $consulta,
-        //     ],Response::HTTP_ACCEPTED);
+        $datos_json = json_decode($request->getContent(), true);
+        $desde      = $datos_json->desdefecha;
+        $hasta      = $datos_json->hastafecha;
+
+        return response()->json(
+             [
+                 'status' => '200 ENT',
+                 'msg' => 'Actualización Exitosa',
+                 'data' =>  $desde . "-" . $hasta,
+             ],Response::HTTP_ACCEPTED);
 
         $consulta = EntradaDeEquipo::all(); 
 
