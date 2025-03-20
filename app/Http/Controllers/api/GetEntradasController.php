@@ -14,7 +14,7 @@ class GetEntradasController extends Controller
     public function GetEntradas(Request $request):JsonResponse
     {
 
-        $datos_json = $request->getContent();
+        //$datos_json = $request->getContent();
         $desde      = $request->desdefecha;
         $hasta      = $request->hastafecha;
 
@@ -22,8 +22,8 @@ class GetEntradasController extends Controller
              [
                  'status' => '200 ENT',
                  'msg' => 'Actualización Exitosa',
-                 'data 1' =>$datos_json,
-                 'data 2' =>$request,
+                 'data 1' =>$desde,
+                 'data 2' =>$hasta,
              ],Response::HTTP_ACCEPTED);
 
         $consulta = EntradaDeEquipo::all(); 
