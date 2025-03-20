@@ -22,7 +22,7 @@ class GetEntradasController extends Controller
              [
                  'status' => '200 ENT',
                  'msg' => 'Actualización Exitosa',
-                 'data 1' =>  $$datos_json,
+                 'data 1' =>$$datos_json,
                  'data 2' =>$request,
              ],Response::HTTP_ACCEPTED);
 
