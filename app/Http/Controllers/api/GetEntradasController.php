@@ -14,9 +14,9 @@ class GetEntradasController extends Controller
     public function GetEntradas(Request $request):JsonResponse
     {
 
-        $datos_json = ($request);
-        // $desde      = $datos_json->desdefecha;
-        // $hasta      = $datos_json->hastafecha;
+        $datos_json = json_decode($request);
+        $desde      = $datos_json->desdefecha;
+        $hasta      = $datos_json->hastafecha;
 
         return response()->json(
              [
@@ -28,10 +28,10 @@ class GetEntradasController extends Controller
 
         $consulta = EntradaDeEquipo::all(); 
 
-        // $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)  
-        // //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
-        //             ->where('fechadereporte','<=',$hasta)                                  
-        //              ->get();   
+        $consulta = EntradaDeEquipo::where('fechadereporte','>=',$desde)  
+              ->where('fechadereporte','<=',$hasta)->get();   
+        //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
+                  
 
         if  (!isset($consulta))
             {
