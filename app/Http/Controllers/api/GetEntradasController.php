@@ -37,6 +37,7 @@ class GetEntradasController extends Controller
                 'status' => '200',
                 'msg' => 'Actualización Exitosa',
                 'data' =>  $consulta,
+                'fechas' =>  $desde . "-" . $hasta,
             ],Response::HTTP_ACCEPTED);
     }
 }
