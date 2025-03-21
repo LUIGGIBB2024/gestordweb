@@ -14,9 +14,9 @@ class GetEntradasController extends Controller
     public function GetEntradas(Request $request):JsonResponse
     {
         
-        $resp =     $request;
-        $desde      = $resp->desdefecha;
-        $hasta      = $resp->hastafecha;
+       
+        $desde      = $request->desdefecha;
+        $hasta      = $request->hastafecha;
 
         $consulta = \App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)  
               ->where('fechadereporte','<=',$hasta)->get();   
@@ -37,6 +37,7 @@ class GetEntradasController extends Controller
                 'status' => '200',
                 'msg' => 'Actualización Exitosa',
                 'data' =>  $consulta,
+                'request' =>  $reques,
                 'fechas' =>  $desde . "-" . $hasta,
             ],Response::HTTP_ACCEPTED);
     }
