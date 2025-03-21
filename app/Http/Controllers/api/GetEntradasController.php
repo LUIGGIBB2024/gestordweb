@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\api;
 
-
 use App\Http\Controllers\Controller;
-use App\Models\Entradadeequipo;
+//use App\Models\Entradadeequipo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,7 +16,7 @@ class GetEntradasController extends Controller
         $desde      = $request->desdefecha;
         $hasta      = $request->hastafecha;
 
-        $consulta = Entradadeequipo::where('fechadereporte','>=',$desde)  
+        $consulta = \App\Models\Entradadeequipo::where('fechadereporte','>=',$desde)  
               ->where('fechadeeporte','<=',$hasta)->get();   
         //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
                   
