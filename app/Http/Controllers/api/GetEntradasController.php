@@ -14,7 +14,7 @@ class GetEntradasController extends Controller
     public function GetEntradas(Request $request):JsonResponse
     {
         
-        $resp = json_decode($request);
+        $resp =     $request;
         $desde      = $resp->desdefecha;
         $hasta      = $resp->hastafecha;
 
