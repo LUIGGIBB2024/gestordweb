@@ -18,7 +18,7 @@ class GetEntradasController extends Controller
         $desde      = $resp->desdefecha;
         $hasta      = $resp->hastafecha;
 
-        $consulta = EntradaDeEquipo::where('fechadereporte','>=',$desde)  
+        $consulta = App\Models\EntradaDeEquipo::where('fechadereporte','>=',$desde)  
               ->where('fechadereporte','<=',$hasta)->get();   
         //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
                   
