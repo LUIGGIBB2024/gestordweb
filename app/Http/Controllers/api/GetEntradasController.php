@@ -18,7 +18,7 @@ class GetEntradasController extends Controller
         $hasta      = $request->hastafecha;
 
         $consulta = EntradaDeEquipo::where('fechadereporte','>=',$desde)  
-              ->where('fechadeeporte','<=',$hasta)->get();      
+              ->where('fechadereporte','<=',$hasta)->get();      
 
         if  (!isset($consulta))
             {
