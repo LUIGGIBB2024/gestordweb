@@ -18,17 +18,6 @@ class GetEntradasController extends Controller
         $desde      = $resp->desdefecha;
         $hasta      = $resp->hastafecha;
 
-        return response()->json(
-             [
-                 'status' => '200 ENT',
-                 'msg' => 'Actualización Exitosa',
-                 'data 1' =>$desde,
-                 'data 2' =>$hasta,
-                 'data 3' =>$request->request,
-             ],Response::HTTP_ACCEPTED);
-
-        $consulta = EntradaDeEquipo::all(); 
-
         $consulta = EntradaDeEquipo::where('fechadereporte','>=',$desde)  
               ->where('fechadereporte','<=',$hasta)->get();   
         //$consulta = Entradadeequipo::where('fechadereporte','>=',$desde)
