@@ -26,5 +26,5 @@ Route::group(['middleware'=>['auth:sanctum']],function()
     Route::post('update-clientes-entradas', [UpdateController::class,'UpdateClientesEntradas']);
     Route::post('update-equipos', [UpdateController::class,'UpdateEquipos']);
 
-    Route::get('get-entradas', [GetEntradasController::class,'GetEntradas']);
+    Route::post('get-entradas', [GetEntradasController::class,'GetEntradas']);
 });
