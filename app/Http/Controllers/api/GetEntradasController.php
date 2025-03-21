@@ -24,7 +24,7 @@ class GetEntradasController extends Controller
                  'msg' => 'Actualización Exitosa',
                  'data 1' =>$desde,
                  'data 2' =>$hasta,
-                 'data 3' =>$request,
+                 'data 3' =>$request->request,
              ],Response::HTTP_ACCEPTED);
 
         $consulta = EntradaDeEquipo::all(); 
