@@ -12,13 +12,15 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class GetEntradasController extends Controller
 {
     public function GetEntradas(Request $request):JsonResponse
-    {
-        
+    {        
         $desde      = $request->desdefecha;
         $hasta      = $request->hastafecha;
 
         $consulta = EntradaDeEquipo::where('fechadereporte','>=',$desde)  
-              ->where('fechadereporte','<=',$hasta)->get();      
+              ->where('fechadereporte','<=',$hasta)
+              ->where('estado','=',1)
+              ->where('estado03','=',1)
+              ->get();      
 
         if  (!isset($consulta))
             {
