@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get("/test", function () {
-    $entradas = \App\Models\EntradaDeEquipo::all();
-    return response()->json($entradas, 200);
-    //return response()->json(["message" => "Hello World!"], 200);
+    return response()->json(["message" => "Hello World!"], 200);
 });
 
 Route::post('register', [AuthController::class,'register']);
