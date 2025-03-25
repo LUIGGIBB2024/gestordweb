@@ -18,13 +18,7 @@ class AuthController extends Controller
     {
       //$correo = $request->email ."--" . $request->password;
 
-      return response()->json(
-        [
-            'status' => '200',
-            'msg' => 'Usuario logueado Exitosamente',
-            'request' => $request,
-        ],Response::HTTP_ACCEPTED);
-
+   
         $usuario = User::where('email','=',$request->email)->first();      
 
         $request->validate([
