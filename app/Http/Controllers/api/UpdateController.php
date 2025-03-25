@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-//use App\Models\EntradaDeEquipo;
+use App\Models\EntradaDeEquipo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,13 +102,12 @@ class UpdateController extends Controller
             //   ],Response::HTTP_ACCEPTED); 
 
             foreach ($entradaseq as $dato)
-            {     
-
+            { 
               $consecutivo  =   $dato->consecutivo;
               $serial       =   $dato->serial;
               $fecha        =   $dato->fechadereporte;
               FacadesDB::beginTransaction();  
-              $reg_entradas =   \App\Models\EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
+              $reg_entradas =   EntradaDeEquipo::updateOrCreate(['serial'=>$serial,'fechadereporte'=>$fecha],
               [
                 'consecutivo'           => $dato->consecutivo,                
                 'tipodedocumento'       => "ENTRADA",
