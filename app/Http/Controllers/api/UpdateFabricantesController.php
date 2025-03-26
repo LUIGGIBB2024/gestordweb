@@ -13,12 +13,12 @@ class UpdateFabricantesController extends Controller
     public function UpdateFabricantes(Request $request):JsonResponse
     {
         //$datos_json = json_decode($request->getContent(), true); 
-        $datos_json = json_decode($request->fabricantes);     
+        //$datos_json = json_decode($request->fabricantes);     
         return response()->json(
           [
               'status' => '200',
               'msg' => 'Actualización Exitosa',
-              'data' =>  $datos_json,
+              'data' =>  $request->fabricantes,
           ],Response::HTTP_ACCEPTED);     
     }
 }
