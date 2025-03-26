@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Fabricante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -14,11 +16,31 @@ class UpdateFabricantesController extends Controller
     {
         //$datos_json = json_decode($request->getContent(), true); 
         //$datos_json = json_decode($request->fabricantes);     
-        return response()->json(
-          [
-              'status' => '200',
-              'msg' => 'Actualización Exitosa',
-              'data' =>  $request->fabricantes
-          ],Response::HTTP_ACCEPTED);     
+        // return response()->json(
+        //   [
+        //       'status' => '200',
+        //       'msg' => 'Actualización Exitosa',
+        //       'data' =>  $request->fabricantes
+        //   ],Response::HTTP_ACCEPTED);   
+        if ($request->fabricantes == null)
+        {
+            return response()->json(
+                [
+                    'status' => '405',
+                    'msg'  => 'Imposible la Actualización',
+                    'data' =>  "Apertura Fabricantes OK",
+                ],Response::HTTP_BAD_REQUEST);
+        }
+        foreach ($request->fabricantes as $dato)
+        {
+            $fabricante = Fabricante::updateOrCreate(['codigo'=>$dato['codigo']],
+            [
+                'descripcion'   => $dato['descricpion'],
+                'estado'        => $dato['estado'],
+                'usuario_created'       =>Auth::user()->codigo,
+                'usuario_updated'       =>Auth::user()->codigo
+              
+            ]);
+        }  
     }
 }
