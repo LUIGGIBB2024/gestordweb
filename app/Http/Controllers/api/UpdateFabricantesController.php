@@ -33,10 +33,11 @@ class UpdateFabricantesController extends Controller
         }
         foreach ($request->fabricantes as $dato)
         {
-            $fabricante = Fabricante::updateOrCreate(['codigo'=>$dato['codigo']],
+            $codigo = $dato['codigo'];
+            $fabricante = Fabricante::updateOrCreate(['codigo'=>$codigo],
             [
-                'descripcion'   => $dato['descricpion'],
-                'estado'        => $dato['estado'],
+                'descripcion'           => $dato['descripcion'],
+                'estado'                => $dato['estado'],
                 'usuario_created'       =>Auth::user()->codigo,
                 'usuario_updated'       =>Auth::user()->codigo
               
