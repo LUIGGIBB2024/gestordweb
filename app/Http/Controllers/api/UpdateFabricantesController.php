@@ -36,8 +36,8 @@ class UpdateFabricantesController extends Controller
             $codigo = $dato['codigo'];
             $fabricante = Fabricante::updateOrCreate(['codigo'=>$codigo],
             [
-                'descripcion'           => $dato['descripcion'],
-                'estado'                => $dato['estado'],
+                'descripcion'           => $dato->descripcion,
+                'estado'                => $dato->estado,
                 'usuario_created'       =>Auth::user()->codigo,
                 'usuario_updated'       =>Auth::user()->codigo
               
