@@ -31,7 +31,7 @@ class UpdateFabricantesController extends Controller
                     'data' =>  "Apertura Fabricantes OK",
                 ],Response::HTTP_BAD_REQUEST);
         }
-        foreach ($request->fabricantes as $dato)
+        foreach (json_decode($request->fabricantes) as $dato)
         {
             $codigo = $dato->codigo;
             $fabricante = Fabricante::updateOrCreate(['codigo'=>$codigo],
