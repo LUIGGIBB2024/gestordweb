@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\GetEntradasController;
+use App\Http\Controllers\api\UpdateCiudadesController;
 use App\Http\Controllers\api\UpdateController;
 use App\Http\Controllers\api\UpdateFabricantesController;
 use App\Http\Controllers\api\UpdateMiscelaneosController;
@@ -27,6 +28,8 @@ Route::group(['middleware'=>['auth:sanctum']],function()
     Route::post('update-equipos', [UpdateController::class,'UpdateEquipos']);
     Route::post('update-fabricantes', [UpdateFabricantesController::class,'UpdateFabricantes']);
     Route::post('update-miscelaneos', [UpdateMiscelaneosController::class,'UpdateMiscelaneos']);
+    Route::post('update-ciudades', [UpdateCiudadesController::class,'UpdateCiudades']);
+
 
     Route::post('get-entradas', [GetEntradasController::class,'GetEntradas']);
 });
