@@ -4,6 +4,7 @@ use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\GetEntradasController;
 use App\Http\Controllers\api\UpdateController;
 use App\Http\Controllers\api\UpdateFabricantesController;
+use App\Http\Controllers\api\UpdateMiscelaneosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::group(['middleware'=>['auth:sanctum']],function()
     Route::post('update-clientes-entradas', [UpdateController::class,'UpdateClientesEntradas']);
     Route::post('update-equipos', [UpdateController::class,'UpdateEquipos']);
     Route::post('update-fabricantes', [UpdateFabricantesController::class,'UpdateFabricantes']);
+    Route::post('update-miscelaneos', [UpdateMiscelaneosController::class,'UpdateMiscelaneos']);
 
     Route::post('get-entradas', [GetEntradasController::class,'GetEntradas']);
 });
