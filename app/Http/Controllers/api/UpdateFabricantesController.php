@@ -33,7 +33,7 @@ class UpdateFabricantesController extends Controller
                 ],Response::HTTP_BAD_REQUEST);
         }
 
-        $fabricantes = json_decode($request->fabricantes);
+        $fabricantes = ($request->fabricantes);
         foreach ($fabricantes as $dato)
         {
             $codigo = $dato->codigo;
