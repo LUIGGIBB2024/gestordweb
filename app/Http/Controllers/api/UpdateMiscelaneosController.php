@@ -40,13 +40,32 @@ class UpdateMiscelaneosController extends Controller
                   'usuario_updated'       =>Auth::user()->codigo
                 ]);
               }
-             
-           return response()->json(
+          } 
+          
+          if (isset($request->detalledemiscelaneos))   
+          {
+              $detalledemiscelaneos = ($request->detalledemiscelaneos);
+              foreach ($detalledemiscelaneos as $dato)
+              {
+                $codigo = $dato["codigo"];
+                $idmiscelaneo = $dato["idmiscelaneo"];
+
+                $miscelaneo = Miscelaneo::updateOrCreate(['codigo'=>$codigo, 'idmiscelaneo'=>$idmiscelaneo],
+                [
+                  'descripcion'           => $dato["descripcion"],
+                  'estado'                => $dato["estado"],
+                  'usuario_created'       =>Auth::user()->codigo,
+                  'usuario_updated'       =>Auth::user()->codigo
+                ]);
+              }
+          } 
+
+          return response()->json(
              [
               'status' => '200',
               'msg' => 'Actualización Exitosa - Miscelaneos',     
               'data' =>  $miscelaneos        
              ],Response::HTTP_ACCEPTED);
-         }
+         
     }
 }
