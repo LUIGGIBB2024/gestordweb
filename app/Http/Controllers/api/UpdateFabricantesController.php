@@ -37,6 +37,7 @@ class UpdateFabricantesController extends Controller
         foreach ($fabricantes as $dato)
         {
             $codigo = $dato["codigo"];
+            
             $fabricante = Fabricante::updateOrCreate(['codigo'=>$codigo],
             [
                 'descripcion'           => $dato["descripcion"],
