@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Detalledemiscelaneo;
 use App\Models\Miscelaneo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,7 +51,7 @@ class UpdateMiscelaneosController extends Controller
                 $codigo       = $dato["codigo"];
                 $idmiscelaneo = $dato["idmiscelaneo"];
 
-                $miscelaneo = Miscelaneo::updateOrCreate(['codigo'=>$codigo, 'idmiscelaneo'=>$idmiscelaneo],
+                $miscelaneo = Detalledemiscelaneo::updateOrCreate(['codigo'=>$codigo, 'idmiscelaneo'=>$idmiscelaneo],
                 [
                   'descripcion'           => $dato["descripcion"],
                   'estado'                => $dato["estado"],
