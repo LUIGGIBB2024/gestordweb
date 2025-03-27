@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UpdateCiudadesController extends Controller
 {
-     public function UpdateMiscelaneos(Request $request):JsonResponse
+     public function UpdateCiudades(Request $request):JsonResponse
     { 
         if ($request->ciudades == null)
         {
