@@ -24,24 +24,29 @@ class UpdateMiscelaneosController extends Controller
                  ],Response::HTTP_BAD_REQUEST);
            }
 
-           $miscelaneos = ($request->miscelaneos);
-           foreach ($miscelaneos as $dato)
-           {
-             $codigo = $dato["codigo"];
+        
+        if (isset($request->miscelaneos))   
+          {
+              $miscelaneos = ($request->miscelaneos);
+              foreach ($miscelaneos as $dato)
+              {
+                $codigo = $dato["codigo"];
 
-             $miscelaneo = Miscelaneo::updateOrCreate(['codigo'=>$codigo],
-             [
-               'descripcion'           => $dato["descripcion"],
-               'estado'                => $dato["estado"],
-               'usuario_created'       =>Auth::user()->codigo,
-               'usuario_updated'       =>Auth::user()->codigo
-             ]);
-           }
+                $miscelaneo = Miscelaneo::updateOrCreate(['codigo'=>$codigo],
+                [
+                  'descripcion'           => $dato["descripcion"],
+                  'estado'                => $dato["estado"],
+                  'usuario_created'       =>Auth::user()->codigo,
+                  'usuario_updated'       =>Auth::user()->codigo
+                ]);
+              }
+             
            return response()->json(
              [
               'status' => '200',
               'msg' => 'Actualización Exitosa - Miscelaneos',     
               'data' =>  $miscelaneos        
              ],Response::HTTP_ACCEPTED);
+         }
     }
 }
