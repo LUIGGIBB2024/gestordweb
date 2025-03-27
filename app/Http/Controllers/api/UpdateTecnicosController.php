@@ -32,10 +32,10 @@ class UpdateTecnicosController extends Controller
 
                 $tecnico = Tecnico::updateOrCreate(['codigo'=>$codigo],
                 [
-                    'nombredeltecnico'      => $dato["nombredeltecnico"],
+                    'nombredeltecnico'      => $dato["nombre"],
                     'cedula'                => $dato["cedula"],
-                    'telefonodeltecnico'    => $dato["telefonodeltecnico"],
-                    'emaildeltecnico'       => $dato["emaildeltecnico"],
+                    'telefonodeltecnico'    => $dato["telefono"],
+                    'emaildeltecnico'       => $dato["email"],
                     'tipo'                  => $dato["tipo"],
                     'estado'                => $dato["estado"],
                     'usuario_created'       =>Auth::user()->codigo,
