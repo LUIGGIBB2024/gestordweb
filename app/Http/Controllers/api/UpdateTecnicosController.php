@@ -46,9 +46,9 @@ class UpdateTecnicosController extends Controller
  
         return response()->json(
             [
-                'status' => '200',
-                'msg' => 'Actualización Exitosa - Tecnicos',
-                'data' =>  $request->tecnicos
-            ]);
+             'status' => '200',
+             'msg' => 'Actualización Exitosa - Técnicos',     
+             'data' =>  $request->tecnicos       
+            ],Response::HTTP_ACCEPTED);
     }
 }
