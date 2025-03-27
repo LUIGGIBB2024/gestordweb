@@ -16,12 +16,12 @@ class UpdateFabricantesController extends Controller
     {
         //$datos_json = json_decode($request->getContent(), true); 
         //$datos_json = json_decode($request->fabricantes);     
-        return response()->json(
-          [
-              'status' => '200',
-              'msg' => 'Actualización Exitosa',
-              'data' =>  $request->fabricantes
-          ],Response::HTTP_ACCEPTED);   
+        // return response()->json(
+        //   [
+        //       'status' => '200',
+        //       'msg' => 'Actualización Exitosa',
+        //       'data' =>  $request->fabricantes
+        //   ],Response::HTTP_ACCEPTED);   
 
         if ($request->fabricantes == null)
         {
