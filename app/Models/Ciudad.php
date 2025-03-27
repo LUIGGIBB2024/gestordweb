@@ -14,6 +14,7 @@ class Ciudad extends Model
         'codigo',
         'descripcion',
         'iddepartamento',
+        'codigodane',
         'estado',
         'usuario_created',
         'usuario_updated',

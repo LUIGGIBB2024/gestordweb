@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ciudad;
+use App\Models\Departamento;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,6 +42,25 @@ class UpdateCiudadesController extends Controller
                 ]);
             }
         } 
+
+        if (isset($request->departamentos))   
+        {
+            $departamentos = ($request->departamentos);
+            foreach ($departamentos as $dato)
+            {
+                $codigo = $dato["codigo"];
+
+                $departamento = Departamento::updateOrCreate(['codigo'=>$codigo],
+                [
+                    'descripcion'           => $dato["descripcion"],
+                    'estado'                => $dato["estado"],
+                    'usuario_created'       =>Auth::user()->codigo,
+                    'usuario_updated'       =>Auth::user()->codigo
+                ]);
+            }
+        }
+        {
+        }
         return response()->json(
             [
                 'status' => '200',
