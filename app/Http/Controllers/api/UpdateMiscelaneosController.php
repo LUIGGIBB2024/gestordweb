@@ -47,7 +47,7 @@ class UpdateMiscelaneosController extends Controller
               $detalledemiscelaneos = ($request->detalledemiscelaneos);
               foreach ($detalledemiscelaneos as $dato)
               {
-                $codigo = $dato["codigo"];
+                $codigo       = $dato["codigo"];
                 $idmiscelaneo = $dato["idmiscelaneo"];
 
                 $miscelaneo = Miscelaneo::updateOrCreate(['codigo'=>$codigo, 'idmiscelaneo'=>$idmiscelaneo],
