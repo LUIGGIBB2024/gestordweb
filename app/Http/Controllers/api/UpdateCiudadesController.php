@@ -34,6 +34,7 @@ class UpdateCiudadesController extends Controller
                 [
                     'descripcion'           => $dato["descripcion"],
                     'codigodane'            => $dato["codigodane"],
+                    'iddepartamento'        => $dato["iddepartamento"],
                     'estado'                => $dato["estado"],
                     'usuario_created'       =>Auth::user()->codigo,
                     'usuario_updated'       =>Auth::user()->codigo
