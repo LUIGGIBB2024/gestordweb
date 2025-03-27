@@ -35,7 +35,7 @@ class UpdateTecnicosController extends Controller
                     'nombredeltecnico'      => $dato["nombre"],
                     'cedula'                => $dato["cedula"],
                     'telefonodeltecnico'    => $dato["telefono"],
-                    'emaildeltecnico'       => $dato["email"],
+                    'emaildeltecnico'       => $dato["emailtec"],
                     'tipo'                  => $dato["tipo"],
                     'estado'                => $dato["estado"],
                     'usuario_created'       =>Auth::user()->codigo,
