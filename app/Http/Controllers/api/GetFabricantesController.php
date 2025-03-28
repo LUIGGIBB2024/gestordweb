@@ -16,7 +16,7 @@ class GetFabricantesController extends Controller
             [
                'status' => '200',
                'msg' => 'Actualización Exitosa',
-               'data' =>  $fabricantes,
+               'fabricantes' =>  $fabricantes,
             ],Response::HTTP_ACCEPTED);
     }
     
