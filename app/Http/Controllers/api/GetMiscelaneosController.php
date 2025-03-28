@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class GetMiscelaneosController extends Controller
 {
-    public function GetMiscelaneos(Request $request)
+    public function GetMiscelaneos():JsonResponse
     {
         $miscelaneos = Miscelaneo::all();
         return response()->json([
