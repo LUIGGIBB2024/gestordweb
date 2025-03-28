@@ -14,9 +14,9 @@ class GetFabricantesController extends Controller
         $fabricantes = Fabricante::all();
         return response()->json(
             [
-                'status' => '200',
-                'msg' => 'Actualización Exitosa',
-                'data' =>  $fabricantes,
+               'status' => '200',
+               'msg' => 'Actualización Exitosa',
+               'data' =>  $fabricantes,
             ],Response::HTTP_ACCEPTED);
     }
     
