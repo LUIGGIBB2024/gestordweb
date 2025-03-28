@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\GetEntradasController;
 use App\Http\Controllers\api\GetFabricantesController;
+use App\Http\Controllers\api\GetMiscelaneosController;
 use App\Http\Controllers\api\UpdateCiudadesController;
 use App\Http\Controllers\api\UpdateController;
 use App\Http\Controllers\api\UpdateFabricantesController;
@@ -35,5 +36,6 @@ Route::group(['middleware'=>['auth:sanctum']],function()
 
     Route::post('get-entradas', [GetEntradasController::class,'GetEntradas']);
     Route::get('get-fabricantes', [GetFabricantesController::class,'GetFabricantes']);
+    Route::get('get-miscelaneos', [GetMiscelaneosController::class,'GetMiscelaneos']);
     
 });
