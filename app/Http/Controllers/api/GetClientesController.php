@@ -16,7 +16,7 @@ class GetClientesController extends Controller
         return response()->json([
             'status' => '200',
             'msg' => 'Actualización Exitosa',
-            'miscelaneos' => $clientes,
+            'clientes' => $clientes,
         ],Response::HTTP_ACCEPTED);
     }
 }
