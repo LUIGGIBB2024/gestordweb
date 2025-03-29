@@ -15,7 +15,7 @@ class GetDetalleDeMiscelaneosController extends Controller
         return response()->json([
             'status' => '200',
             'msg' => 'Actualización Exitosa',
-            'miscelaneos' => $detalledemiscelaneos,
+            'detmiscelaneos' => $detalledemiscelaneos,
         ],Response::HTTP_ACCEPTED);        
        
     }
