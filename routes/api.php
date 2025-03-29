@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\GetClientesController;
 use App\Http\Controllers\api\GetDetalleDeMiscelaneosController;
 use App\Http\Controllers\api\GetEntradasController;
 use App\Http\Controllers\api\GetFabricantesController;
@@ -38,6 +39,6 @@ Route::group(['middleware'=>['auth:sanctum']],function()
     Route::post('get-entradas', [GetEntradasController::class,'GetEntradas']);
     Route::get('get-fabricantes', [GetFabricantesController::class,'GetFabricantes']);
     Route::get('get-miscelaneos', [GetMiscelaneosController::class,'GetMiscelaneos']);  
-    Route::get('get-detmiscelaneos', [GetDetalleDeMiscelaneosController::class,'GetDetalleDeMiscelaneos']);    
-    
+    Route::get('get-detmiscelaneos', [GetDetalleDeMiscelaneosController::class,'GetDetalleDeMiscelaneos']); 
+    Route::get('get-clientes', [GetClientesController::class,'GetClientes']);     
 });
