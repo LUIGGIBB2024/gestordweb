@@ -22,6 +22,8 @@ class EntradaDeEquipo extends Model
         'modelo',
         'idcliente',
         'idtecnico',
+        'idmarca',
+        'idtipodeequipo',
         'fechadereporte',
         'reporte',
         'observaciones',
