@@ -86,14 +86,8 @@ class UpdateController extends Controller
             //   ],Response::HTTP_ACCEPTED); 
 
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-            return response()->json(
-              [
-                  'status' => '200',
-                  'msg' => 'Actualización Exitosa - xxxx',
-                  'data' => $entradaseq,
-              ],Response::HTTP_ACCEPTED); 
-
-            foreach ($entradaseq as $dato)
+           
+           foreach ($entradaseq as $dato)
             { 
               $consecutivo  =   $dato->consecutivo;
               $serial       =   $dato->serial;
