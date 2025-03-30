@@ -27,6 +27,8 @@ class CreateEntradadeequiposTable extends Migration
             $table->string('modelo',20);
             $table->bigInteger('idcliente')->index();
             $table->bigInteger('idtecnico')->index();
+            $table->bigInteger('idmarca')->index();
+            $table->bigInteger('idtipodeequipo')->index();
             $table->date('fechadereporte')->index();
             $table->text('reporte');
             $table->text('observaciones');
