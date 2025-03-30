@@ -110,7 +110,7 @@ class UpdateController extends Controller
                 'idcliente'             => $dato->idcliente,
                 'idtecnico'             => $dato->idtecnico,
                 'idmarca'               => $dato->idmarca,
-                'idtipodeequipo'        => 1,
+                'idtipodeequipo'        => $dato->idtipodeequipo,
                 'rutafirma'             => "",
                 'serial'                => $dato->serial,
                 'modelo'                => $dato->modelo,
