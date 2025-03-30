@@ -109,7 +109,7 @@ class UpdateController extends Controller
                 'email'                 => $dato->email,                  
                 'idcliente'             => $dato->idcliente,
                 'idtecnico'             => $dato->idtecnico,
-                'idmarca'               => 1,
+                'idmarca'               => $dato->idmarca,
                 'idtipodeequipo'        => 1,
                 'rutafirma'             => "",
                 'serial'                => $dato->serial,
