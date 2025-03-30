@@ -21,7 +21,8 @@ class UpdateController extends Controller
         return response()->json(
           [
               'status' => '200',
-              'msg' => 'Actualización Exitosa sssss',             
+              'msg' => 'Actualización Exitosa sssss', 
+              'data' => 'Soy Entradas',            
           ],Response::HTTP_ACCEPTED);  
          
         $datos_json = json_decode($request->entradas);     
