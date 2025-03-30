@@ -19,16 +19,7 @@ class UpdateController extends Controller
         //$datos_json = json_decode($request->getContent(), true); 
 
         
-        $datos_json = json_decode($request->entradas);     
-        return response()->json(
-          [
-              'status' => '200',
-              'msg' => 'Actualización Exitosa sssss',
-              'data' =>  $datos_json,
-          ],Response::HTTP_ACCEPTED);     
-
-
-
+        $datos_json = json_decode($request->entradas);  
         // if (isset($datos_json["clientes"]))
         // {
 
@@ -95,12 +86,12 @@ class UpdateController extends Controller
             //   ],Response::HTTP_ACCEPTED); 
 
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-            // return response()->json(
-            //   [
-            //       'status' => '200',
-            //       'msg' => 'Actualización Exitosa',
-            //       'data' => $entradas,
-            //   ],Response::HTTP_ACCEPTED); 
+            return response()->json(
+              [
+                  'status' => '200',
+                  'msg' => 'Actualización Exitosa - xxxx',
+                  'data' => $entradaseq,
+              ],Response::HTTP_ACCEPTED); 
 
             foreach ($entradaseq as $dato)
             { 
