@@ -18,6 +18,7 @@ class EntradaDeEquipo extends Model
         'nombre',
         'direccion',
         'telefono',
+        'email',
         'serial',
         'modelo',
         'idcliente',
