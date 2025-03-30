@@ -17,14 +17,20 @@ class UpdateController extends Controller
     {
 
         //$datos_json = json_decode($request->getContent(), true); 
+
+        return response()->json(
+          [
+              'status' => '200',
+              'msg' => 'Actualización Exitosa sssss',             
+          ],Response::HTTP_ACCEPTED);  
          
         $datos_json = json_decode($request->entradas);     
-        // return response()->json(
-        //   [
-        //       'status' => '200',
-        //       'msg' => 'Actualización Exitosa',
-        //       'data' =>  $datos_json,
-        //   ],Response::HTTP_ACCEPTED);     
+        return response()->json(
+          [
+              'status' => '200',
+              'msg' => 'Actualización Exitosa sssss',
+              'data' =>  $datos_json,
+          ],Response::HTTP_ACCEPTED);     
 
 
 
