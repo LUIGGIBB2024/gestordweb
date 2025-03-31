@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\GetCiudadesController;
 use App\Http\Controllers\api\GetClientesController;
 use App\Http\Controllers\api\GetDetalleDeMiscelaneosController;
 use App\Http\Controllers\api\GetEntradasController;
@@ -41,4 +42,5 @@ Route::group(['middleware'=>['auth:sanctum']],function()
     Route::get('get-miscelaneos', [GetMiscelaneosController::class,'GetMiscelaneos']);  
     Route::get('get-detmiscelaneos', [GetDetalleDeMiscelaneosController::class,'GetDetalleDeMiscelaneos']); 
     Route::get('get-clientes', [GetClientesController::class,'GetClientes']);     
+    Route::get('get-ciudades', [GetCiudadesController::class,'GetCiudades']);  
 });
