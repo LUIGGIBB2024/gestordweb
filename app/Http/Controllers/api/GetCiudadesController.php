@@ -11,6 +11,7 @@ class GetCiudadesController extends Controller
 {
     public function GetCiudades(): JsonResponse
     {
+        $a = 0;
         $ciudades = Ciudad::all();
 
         return response()->json([
